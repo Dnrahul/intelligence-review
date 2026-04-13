@@ -1,0 +1,128 @@
+/* Header.module.css — Review Intelligence System */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-8);
+  background: rgba(248, 249, 250, 0.82);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+/* ─── DN Logo Mark ─────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.logo:hover { opacity: 0.75; }
+
+.logoMark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  /* Antigravity-like multi-color gradient */
+  background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc04 65%, #34a853 100%);
+  background-size: 200% 200%;
+  animation: dnGradientFlow 6s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(66, 133, 244, 0.3);
+  flex-shrink: 0;
+}
+
+.dnText {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.logoTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  line-height: 1;
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.logoSub {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  line-height: 1.2;
+}
+
+/* ─── Nav ──────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.navDivider {
+  width: 1px;
+  height: 16px;
+  background: var(--border-primary);
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+}
+.navLink:hover { color: var(--text-primary); }
+
+.githubBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+}
+.githubBtn:hover {
+  color: var(--text-primary);
+  background: var(--gray-100);
+  border-color: var(--gray-300);
+}
+
+@media (max-width: 640px) {
+  .header { padding: 0 var(--space-4); }
+  .nav { gap: var(--space-3); }
+  .navLink, .navDivider { display: none; }
+  .logoSub { display: none; }
+}
